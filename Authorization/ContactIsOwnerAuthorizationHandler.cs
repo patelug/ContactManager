@@ -1,9 +1,8 @@
-using System.Threading.Tasks;
-using ContactManager.Data;
 using ContactManager.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
 
 namespace ContactManager.Authorization
 {
@@ -28,6 +27,7 @@ namespace ContactManager.Authorization
                 return Task.CompletedTask;
             }
 
+            // If not asking for CRUD permission, return.
 
             if (requirement.Name != Constants.CreateOperationName &&
                 requirement.Name != Constants.ReadOperationName &&
